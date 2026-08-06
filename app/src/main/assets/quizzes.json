@@ -1,0 +1,140 @@
+{
+  "categories": [
+    {
+      "id": "cat_mistakes",
+      "name": "Common Mistakes",
+      "description": "15 Quizzes",
+      "icon_placeholder": "ic_error",
+      "packs": [
+        {
+          "id": "mistakes_set_1",
+          "name": "Common Mistakes - Set 1",
+          "question_count": 3,
+          "questions": [
+            {
+              "id": 1,
+              "question_text": "Which sentence is correct?",
+              "options": [
+                "I am agree with you.",
+                "I agree with you.",
+                "I am agreeing with you.",
+                "I agreeing with you."
+              ],
+              "correct_answer_index": 1,
+              "explanation_bn": "'Agree' একটি verb। তাই present tense-এ এর আগে 'am' লাগে না।",
+              "example_sentence": "I agree with your decision."
+            },
+            {
+              "id": 2,
+              "question_text": "Identify the correct sentence:",
+              "options": [
+                "He does not knows me.",
+                "He does not know me.",
+                "He not know me.",
+                "He do not know me."
+              ],
+              "correct_answer_index": 1,
+              "explanation_bn": "Does/Do এর পর verb এর base form বসে, s/es যুক্ত হয় না।",
+              "example_sentence": "She does not like tea."
+            },
+            {
+              "id": 3,
+              "question_text": "Which one is right?",
+              "options": [
+                "I have seen him yesterday.",
+                "I saw him yesterday.",
+                "I was saw him yesterday.",
+                "I see him yesterday."
+              ],
+              "correct_answer_index": 1,
+              "explanation_bn": "'Yesterday' থাকলে past indefinite tense (saw) হয়, present perfect (have seen) নয়।",
+              "example_sentence": "I saw a movie yesterday."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cat_sentences",
+      "name": "Daily Sentences",
+      "description": "15 Quizzes",
+      "icon_placeholder": "ic_chat",
+      "packs": [
+        {
+          "id": "sentences_set_1",
+          "name": "Daily Sentences - Set 1",
+          "question_count": 2,
+          "questions": [
+            {
+              "id": 1,
+              "question_text": "How do you say 'আমি এখন যাচ্ছি' in English?",
+              "options": [
+                "I am go now.",
+                "I am going now.",
+                "I go now.",
+                "I going now."
+              ],
+              "correct_answer_index": 1,
+              "explanation_bn": "বর্তমান কাজ চলছে বোঝাতে Present Continuous Tense ব্যবহার হয়।",
+              "example_sentence": "I am going to the market now."
+            },
+            {
+              "id": 2,
+              "question_text": "English for 'দয়া করে বসুন':",
+              "options": [
+                "Please sit.",
+                "Please sit down.",
+                "Sit please.",
+                "Please sitting."
+              ],
+              "correct_answer_index": 1,
+              "explanation_bn": "'Sit down' একটি সাধারণ অভিবাদন বা অনুরোধ।",
+              "example_sentence": "Please sit down and relax."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cat_vocab",
+      "name": "Vocabulary",
+      "description": "15 Quizzes",
+      "icon_placeholder": "ic_book",
+      "packs": [
+        {
+          "id": "vocab_set_1",
+          "name": "Vocabulary - Set 1",
+          "question_count": 2,
+          "questions": [
+            {
+              "id": 1,
+              "question_text": "What is the synonym of 'Happy'?",
+              "options": [
+                "Sad",
+                "Joyful",
+                "Angry",
+                "Tired"
+              ],
+              "correct_answer_index": 1,
+              "explanation_bn": "'Happy' মানে সুখী, 'Joyful' মানে আনন্দিত।",
+              "example_sentence": "She was joyful after hearing the news."
+            },
+            {
+              "id": 2,
+              "question_text": "What does 'Enormous' mean?",
+              "options": [
+                "Small",
+                "Huge",
+                "Tiny",
+                "Weak"
+              ],
+              "correct_answer_index": 1,
+              "explanation_bn": "'Enormous' মানে বিশাল বা অনেক বড়।",
+              "example_sentence": "The elephant is an enormous animal."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

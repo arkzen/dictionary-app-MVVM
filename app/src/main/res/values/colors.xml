@@ -32,4 +32,17 @@
 
     <color name="welctxtcolor">#8c8c8c</color>
     <color name="searchtxtcolor">#212020</color>
+
+    <!-- Quiz App Colors -->
+    <color name="quiz_primary">#6C63FF</color>
+    <color name="quiz_primary_variant">#5A52E5</color>
+    <color name="quiz_background">#F8F9FD</color>
+    <color name="quiz_surface">#FFFFFF</color>
+    <color name="quiz_correct">#4CAF50</color>
+    <color name="quiz_incorrect">#F44336</color>
+    <color name="quiz_text_primary">#2D2D2D</color>
+    <color name="quiz_text_secondary">#757575</color>
+    <color name="quiz_accent_purple">#E8E7FF</color>
+    <color name="quiz_accent_green">#E8F5E9</color>
+    <color name="quiz_accent_red">#FFEBEE</color>
 </resources>

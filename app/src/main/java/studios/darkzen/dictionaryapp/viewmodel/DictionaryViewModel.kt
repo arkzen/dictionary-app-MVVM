@@ -17,7 +17,7 @@ class DictionaryViewModel @Inject constructor(
     private val repository: DictionaryRepository
 ) : ViewModel() {
 
-    private val _dictionaryState = MutableStateFlow<ResultState<RootResponse>>(ResultState.Loading)
+    private val _dictionaryState = MutableStateFlow<ResultState<RootResponse>>(ResultState.Idle)
     val dictionaryState: StateFlow<ResultState<RootResponse>> = _dictionaryState.asStateFlow()
 
     fun getDefinition(word: String) {

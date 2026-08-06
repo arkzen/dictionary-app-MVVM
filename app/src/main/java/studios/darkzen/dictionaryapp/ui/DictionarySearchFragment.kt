@@ -1,39 +1,40 @@
 package studios.darkzen.dictionaryapp.ui
 
+import android.content.Context
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.text.method.LinkMovementMethod
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import androidx.activity.viewModels
 import androidx.core.text.HtmlCompat
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
-import studios.darkzen.dictionaryapp.R
-import studios.darkzen.dictionaryapp.common.core.CoreBaseActivity
-import studios.darkzen.dictionaryapp.common.core.ResultState
-import studios.darkzen.dictionaryapp.data.model.RootResponse
-import studios.darkzen.dictionaryapp.databinding.ActivityHomepageBinding
-import studios.darkzen.dictionaryapp.ui.adapter.MeaningAdapter
-import studios.darkzen.dictionaryapp.viewmodel.DictionaryViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import studios.darkzen.dictionaryapp.R
+import studios.darkzen.dictionaryapp.common.core.CoreBaseFragment
+import studios.darkzen.dictionaryapp.common.core.ResultState
+import studios.darkzen.dictionaryapp.data.model.RootResponse
+import studios.darkzen.dictionaryapp.databinding.FragmentDictionarySearchBinding
+import studios.darkzen.dictionaryapp.ui.adapter.MeaningAdapter
+import studios.darkzen.dictionaryapp.viewmodel.DictionaryViewModel
 import java.io.IOException
 
 @AndroidEntryPoint
-class HomepageActivity : CoreBaseActivity<ActivityHomepageBinding>() {
+class DictionarySearchFragment : CoreBaseFragment<FragmentDictionarySearchBinding>() {
 
     private val viewModel: DictionaryViewModel by viewModels()
     private var mediaPlayer: MediaPlayer? = null
     private var isPlaying = false
 
-    override fun getViewBinding() = ActivityHomepageBinding.inflate(layoutInflater)
+    override fun getViewBinding() = FragmentDictionarySearchBinding.inflate(layoutInflater)
 
     override fun setupUI() {
-        binding.rvMeaning.layoutManager = LinearLayoutManager(this)
+        binding.rvMeaning.layoutManager = LinearLayoutManager(requireContext())
         
         binding.btnSearch.setOnClickListener {
             val word = binding.etSearch.text.toString().trim()
@@ -42,19 +43,16 @@ class HomepageActivity : CoreBaseActivity<ActivityHomepageBinding>() {
                 hideKeyboard()
             }
         }
-        
-        val initialWord = intent.getStringExtra("word")
-        if (initialWord != null) {
-            binding.etSearch.setText(initialWord)
-            viewModel.getDefinition(initialWord)
-        }
     }
 
     override fun setupObserver() {
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.dictionaryState.collectLatest { state ->
                     when (state) {
+                        is ResultState.Idle -> {
+                            showLoader(false)
+                        }
                         is ResultState.Loading -> {
                             showLoader(true)
                         }
@@ -64,7 +62,7 @@ class HomepageActivity : CoreBaseActivity<ActivityHomepageBinding>() {
                         }
                         is ResultState.Error -> {
                             showLoader(false)
-                            // Handle error (e.g., show toast)
+                            android.widget.Toast.makeText(requireContext(), "Error: ${state.error.message ?: "Unknown error"}", android.widget.Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
@@ -119,11 +117,11 @@ class HomepageActivity : CoreBaseActivity<ActivityHomepageBinding>() {
                 prepareAsync()
                 setOnPreparedListener {
                     start()
-                    this@HomepageActivity.isPlaying = true
+                    this@DictionarySearchFragment.isPlaying = true
                     binding.btnAudioplay.setImageResource(R.drawable.ic_pause)
                 }
                 setOnCompletionListener {
-                    this@HomepageActivity.isPlaying = false
+                    this@DictionarySearchFragment.isPlaying = false
                     binding.btnAudioplay.setImageResource(R.drawable.ic_playbtn)
                     release()
                 }
@@ -134,12 +132,12 @@ class HomepageActivity : CoreBaseActivity<ActivityHomepageBinding>() {
     }
 
     private fun hideKeyboard() {
-        val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        val imm = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(binding.etSearch.windowToken, 0)
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         mediaPlayer?.release()
     }
 }

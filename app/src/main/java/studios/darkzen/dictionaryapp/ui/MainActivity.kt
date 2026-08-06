@@ -1,53 +1,37 @@
 package studios.darkzen.dictionaryapp.ui
 
-import android.content.Intent
-import androidx.activity.viewModels
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupWithNavController
+import studios.darkzen.dictionaryapp.R
 import studios.darkzen.dictionaryapp.common.core.CoreBaseActivity
-import studios.darkzen.dictionaryapp.common.core.ResultState
 import studios.darkzen.dictionaryapp.databinding.ActivityMainBinding
-import studios.darkzen.dictionaryapp.viewmodel.DictionaryViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MainActivity : CoreBaseActivity<ActivityMainBinding>() {
 
-    private val viewModel: DictionaryViewModel by viewModels()
+    private lateinit var navController: NavController
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun getViewBinding() = ActivityMainBinding.inflate(layoutInflater)
 
     override fun setupUI() {
-        binding.btnSearch.setOnClickListener {
-            val word = binding.etSearch.text.toString().trim()
-            if (word.isNotEmpty()) {
-                val intent = Intent(this, HomepageActivity::class.java)
-                intent.putExtra("word", word)
-                startActivity(intent)
-            }
-        }
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
+
+        appBarConfiguration = AppBarConfiguration(
+            setOf(R.id.homeFragment, R.id.dictionarySearchFragment),
+            binding.drawerLayout
+        )
+
+        binding.toolbar.setupWithNavController(navController, appBarConfiguration)
+        binding.navView.setupWithNavController(navController)
     }
 
     override fun setupObserver() {
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.dictionaryState.collectLatest { state ->
-                    when (state) {
-                        is ResultState.Loading -> {
-                            // Show loading
-                        }
-                        is ResultState.Success -> {
-                            // Handle success
-                        }
-                        is ResultState.Error -> {
-                            // Handle error
-                        }
-                    }
-                }
-            }
-        }
+        // Observers for global state if needed
     }
 }

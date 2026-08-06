@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="studios.darkzen.dictionaryapp.ui.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_quizPackFragment"
+            app:destination="@id/quizPackFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/quizPackFragment"
+        android:name="studios.darkzen.dictionaryapp.ui.QuizPackFragment"
+        android:label="Quiz Packs"
+        tools:layout="@layout/fragment_quiz_pack">
+        <argument
+            android:name="categoryId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_quizPackFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="studios.darkzen.dictionaryapp.ui.QuizFragment"
+        android:label="Quiz"
+        tools:layout="@layout/fragment_quiz">
+        <argument
+            android:name="packId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_quizFragment_to_resultFragment"
+            app:destination="@id/resultFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="studios.darkzen.dictionaryapp.ui.ResultFragment"
+        android:label="Result"
+        tools:layout="@layout/fragment_result">
+        <argument
+            android:name="score"
+            app:argType="integer" />
+        <argument
+            android:name="total"
+            app:argType="integer" />
+        <argument
+            android:name="packId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_resultFragment_to_reviewFragment"
+            app:destination="@id/reviewFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/reviewFragment"
+        android:name="studios.darkzen.dictionaryapp.ui.ReviewFragment"
+        android:label="Review"
+        tools:layout="@layout/fragment_review">
+        <argument
+            android:name="packId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dictionarySearchFragment"
+        android:name="studios.darkzen.dictionaryapp.ui.DictionarySearchFragment"
+        android:label="Dictionary Search"
+        tools:layout="@layout/fragment_dictionary_search" />
+
+</navigation>
