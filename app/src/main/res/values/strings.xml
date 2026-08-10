@@ -46,4 +46,7 @@
     <string name="review_answers">Review Answers</string>
     <string name="try_again">Try Again</string>
     <string name="back_home">Back Home</string>
+    <string name="today_quiz_done">Today\'s quiz is done! Next tomorrow.</string>
+    <string name="review_results">Review Results</string>
+    <string name="continue_quiz">Continue Quiz</string>
 </resources>
