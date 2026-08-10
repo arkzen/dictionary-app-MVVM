@@ -327,6 +327,51 @@
             tools:listitem="@layout/item_quiz_pack" />
 
 
+        <!-- ===================================================== -->
+        <!-- 5. MOTIVATIONAL QUOTE                                 -->
+        <!-- ===================================================== -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutQuote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/bg_motivation_quotes"
+            android:minHeight="110dp"
+            android:paddingStart="24dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvQuizPacks">
+
+            <TextView
+                android:id="@+id/tvHomeQuote"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_bold"
+                android:lineSpacingExtra="4dp"
+                android:maxLines="2"
+                android:layout_marginTop="5dp"
+                android:textColor="#3D3270"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineQuote"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Small steps still move you forward." />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineQuote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.70" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

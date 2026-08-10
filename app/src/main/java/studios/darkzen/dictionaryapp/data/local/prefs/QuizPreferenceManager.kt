@@ -38,6 +38,23 @@ class QuizPreferenceManager @Inject constructor(
         }
     }
 
+    fun getMoreQuizPacksIds(): List<String> {
+        val storedDate = prefs.getString("more_quiz_packs_date", null)
+        if (storedDate == getTodayDate()) {
+            val ids = prefs.getString("more_quiz_packs_ids", null)
+            return ids?.split(",") ?: emptyList()
+        }
+        return emptyList()
+    }
+
+    fun saveMoreQuizPacks(packIds: List<String>) {
+        prefs.edit().apply {
+            putString("more_quiz_packs_date", getTodayDate())
+            putString("more_quiz_packs_ids", packIds.joinToString(","))
+            apply()
+        }
+    }
+
     fun getPreviousDailyQuizPackId(): String? {
         return prefs.getString("previous_daily_quiz_pack_id", null)
     }

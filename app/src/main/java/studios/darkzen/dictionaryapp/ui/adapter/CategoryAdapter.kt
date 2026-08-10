@@ -22,7 +22,10 @@ class CategoryAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val category = categories[position]
         holder.binding.tvName.text = category.name
-        holder.binding.tvDesc.text = category.description
+        holder.binding.tvDesc.text  = holder.itemView.context.getString(
+            R.string.quiz_packs_count,
+            category.packs.size
+        )
         
         val iconRes = when (category.iconPlaceholder) {
             "ic_error" -> R.drawable.ic_error

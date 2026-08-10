@@ -28,6 +28,11 @@ class HomeFragment : CoreBaseFragment<FragmentHomeBinding>() {
     override fun setupUI() {
         binding.rvCategories.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rvQuizPacks.layoutManager = LinearLayoutManager(requireContext())
+
+        binding.tvViewAll.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToAllQuizPacksFragment()
+            findNavController().navigate(action)
+        }
     }
 
     private fun navigateToQuiz(packId: String) {
@@ -45,6 +50,13 @@ class HomeFragment : CoreBaseFragment<FragmentHomeBinding>() {
                     }
                 }
 
+                // Observe daily quote
+                launch {
+                    viewModel.homeQuote.collectLatest { quote ->
+                        binding.tvHomeQuote.text = quote?.en
+                    }
+                }
+
                 // Observe categories
                 launch {
                     viewModel.categories.collectLatest { categories ->
@@ -53,17 +65,22 @@ class HomeFragment : CoreBaseFragment<FragmentHomeBinding>() {
                                 val action = HomeFragmentDirections.actionHomeFragmentToQuizPackFragment(category.id)
                                 findNavController().navigate(action)
                             }
-                            
-                            val allPacks = categories.flatMap { it.packs }
-                            val adapter = QuizPackAdapter(allPacks, viewModel.allProgress.value) { pack ->
+                        }
+                    }
+                }
+
+                // Observe More Quiz Packs
+                launch {
+                    viewModel.moreQuizPacks.collectLatest { packs ->
+                        if (packs.isNotEmpty()) {
+                            val adapter = QuizPackAdapter(packs, viewModel.allProgress.value) { pack ->
                                 navigateToQuiz(pack.id)
                             }
                             binding.rvQuizPacks.adapter = adapter
-                            
-                            // Observe progress changes for full list
+
                             launch {
                                 viewModel.allProgress.collectLatest { progressList ->
-                                    adapter.updateData(allPacks, progressList)
+                                    adapter.updateData(packs, progressList)
                                 }
                             }
                         }

@@ -30,6 +30,10 @@ class ResultFragment : CoreBaseFragment<FragmentResultBinding>() {
         binding.tvIncorrectCount.text = incorrect.toString()
         binding.tvAccuracy.text = "$accuracy%"
 
+        // Show random motivational quote
+        val quote = viewModel.getRandomCompletionQuote()
+        binding.tvResultQuote.text = quote?.en
+
         binding.btnReview.setOnClickListener {
             val action = ResultFragmentDirections.actionResultFragmentToReviewFragment(args.packId)
             findNavController().navigate(action)

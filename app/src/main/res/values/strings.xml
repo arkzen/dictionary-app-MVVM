@@ -49,4 +49,5 @@
     <string name="today_quiz_done">Today\'s quiz is done! Next tomorrow.</string>
     <string name="review_results">Review Results</string>
     <string name="continue_quiz">Continue Quiz</string>
+    <string name="quiz_packs_count">%1$d Quiz Packs</string>
 </resources>

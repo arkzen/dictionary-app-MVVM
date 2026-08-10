@@ -16,6 +16,19 @@
         <action
             android:id="@+id/action_homeFragment_to_quizFragment"
             app:destination="@id/quizFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_allQuizPacksFragment"
+            app:destination="@id/allQuizPacksFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/allQuizPacksFragment"
+        android:name="studios.darkzen.dictionaryapp.ui.AllQuizPacksFragment"
+        android:label="All Quiz Packs"
+        tools:layout="@layout/fragment_all_quiz_packs">
+        <action
+            android:id="@+id/action_allQuizPacksFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
     </fragment>
 
     <fragment

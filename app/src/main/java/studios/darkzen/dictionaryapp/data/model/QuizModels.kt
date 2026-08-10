@@ -33,3 +33,14 @@ data class Question(
     @SerializedName("example_sentence") val exampleSentence: String,
     @SerializedName("reel_talking_point_bn") val reelTalkingPointBn: String?
 )
+
+data class QuoteData(
+    @SerializedName("quotes") val quotes: List<Quote>
+)
+
+data class Quote(
+    @SerializedName("id") val id: Int,
+    @SerializedName("type") val type: String, // "home" or "quiz_completion"
+    @SerializedName("en") val en: String,
+    @SerializedName("bn") val bn: String
+)

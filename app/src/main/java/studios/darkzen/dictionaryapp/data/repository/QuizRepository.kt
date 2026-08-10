@@ -29,6 +29,16 @@ class QuizRepository @Inject constructor(
         }
     }
 
+    fun getQuotes(): List<studios.darkzen.dictionaryapp.data.model.Quote> {
+        return try {
+            val jsonString = context.assets.open("quotes.json").bufferedReader().use { it.readText() }
+            val quoteData = gson.fromJson(jsonString, studios.darkzen.dictionaryapp.data.model.QuoteData::class.java)
+            quoteData.quotes
+        } catch (e: Exception) {
+            emptyList()
+        }
+    }
+
     suspend fun getProgressById(packId: String) = quizDao.getProgressById(packId)
 
     fun getAllProgress(): Flow<List<QuizProgressEntity>> = quizDao.getAllProgress()

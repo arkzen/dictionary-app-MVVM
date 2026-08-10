@@ -1,0 +1,364 @@
+{
+  "quotes": [
+    {
+      "id": 1,
+      "type": "home",
+      "en": "Small steps still move you forward.",
+      "bn": "ছোট পদক্ষেপও তোমাকে সামনে এগিয়ে নেয়।"
+    },
+    {
+      "id": 2,
+      "type": "home",
+      "en": "Consistency turns effort into quiet strength.",
+      "bn": "ধারাবাহিকতা প্রচেষ্টাকে নীরব শক্তিতে বদলে দেয়।"
+    },
+    {
+      "id": 3,
+      "type": "home",
+      "en": "Progress grows where patience chooses to stay.",
+      "bn": "যেখানে ধৈর্য থাকে, সেখানেই অগ্রগতি জন্মায়।"
+    },
+    {
+      "id": 4,
+      "type": "home",
+      "en": "Keep going; your future is being built.",
+      "bn": "চালিয়ে যাও, তোমার ভবিষ্যৎ এখনই তৈরি হচ্ছে।"
+    },
+    {
+      "id": 5,
+      "type": "home",
+      "en": "Discipline remembers what motivation often forgets.",
+      "bn": "অনুপ্রেরণা ভুললেও শৃঙ্খলা লক্ষ্য মনে রাখে।"
+    },
+    {
+      "id": 6,
+      "type": "home",
+      "en": "Better each day is already enough.",
+      "bn": "প্রতিদিন একটু ভালো হওয়াই যথেষ্ট।"
+    },
+    {
+      "id": 7,
+      "type": "home",
+      "en": "Your habits quietly shape your tomorrow.",
+      "bn": "তোমার অভ্যাস নীরবে আগামীকাল গড়ে তোলে।"
+    },
+    {
+      "id": 8,
+      "type": "home",
+      "en": "Growth begins when excuses stop leading.",
+      "bn": "অজুহাত থামলেই সত্যিকারের উন্নতি শুরু হয়।"
+    },
+    {
+      "id": 9,
+      "type": "home",
+      "en": "Patience makes difficult journeys worth finishing.",
+      "bn": "ধৈর্য কঠিন পথকেও শেষ করার শক্তি দেয়।"
+    },
+    {
+      "id": 10,
+      "type": "home",
+      "en": "Show up, even when progress feels invisible.",
+      "bn": "অগ্রগতি না দেখালেও প্রতিদিন হাজির হও।"
+    },
+    {
+      "id": 11,
+      "type": "home",
+      "en": "A calm mind learns faster and deeper.",
+      "bn": "শান্ত মন দ্রুত ও গভীরভাবে শেখে।"
+    },
+    {
+      "id": 12,
+      "type": "home",
+      "en": "What you repeat becomes who you are.",
+      "bn": "যা বারবার করো, তাই তোমাকে গড়ে।"
+    },
+    {
+      "id": 13,
+      "type": "home",
+      "en": "Tiny wins create powerful momentum.",
+      "bn": "ছোট ছোট জয় বড় গতি তৈরি করে।"
+    },
+    {
+      "id": 14,
+      "type": "home",
+      "en": "Focus makes ordinary effort become extraordinary.",
+      "bn": "মনোযোগ সাধারণ প্রচেষ্টাকেও অসাধারণ করে তোলে।"
+    },
+    {
+      "id": 15,
+      "type": "home",
+      "en": "You grow every time you continue.",
+      "bn": "প্রতিবার এগিয়ে গেলে তুমি আরও বড় হও।"
+    },
+    {
+      "id": 16,
+      "type": "home",
+      "en": "Slow progress is still honest progress.",
+      "bn": "ধীর অগ্রগতিও সত্যিকারের অগ্রগতি।"
+    },
+    {
+      "id": 17,
+      "type": "home",
+      "en": "Learn today; become stronger tomorrow.",
+      "bn": "আজ শিখো, আগামীকাল আরও শক্ত হও।"
+    },
+    {
+      "id": 18,
+      "type": "home",
+      "en": "Consistency beats intensity that quickly disappears.",
+      "bn": "ক্ষণস্থায়ী তীব্রতার চেয়ে ধারাবাহিকতা বেশি শক্তিশালী।"
+    },
+    {
+      "id": 19,
+      "type": "home",
+      "en": "Mistakes are proof that learning is happening.",
+      "bn": "ভুলই প্রমাণ করে শেখা সত্যিই চলছে।"
+    },
+    {
+      "id": 20,
+      "type": "home",
+      "en": "Confidence grows after action, not before.",
+      "bn": "আত্মবিশ্বাস কাজের পরে বাড়ে, আগে নয়।"
+    },
+    {
+      "id": 21,
+      "type": "home",
+      "en": "Keep your promise to your future self.",
+      "bn": "ভবিষ্যতের নিজের কাছে দেওয়া কথা রাখো।"
+    },
+    {
+      "id": 22,
+      "type": "home",
+      "en": "A little courage changes the next step.",
+      "bn": "সামান্য সাহস পরের পদক্ষেপ বদলে দেয়।"
+    },
+    {
+      "id": 23,
+      "type": "home",
+      "en": "Your pace matters less than your direction.",
+      "bn": "গতির চেয়ে সঠিক দিক বেশি গুরুত্বপূর্ণ।"
+    },
+    {
+      "id": 24,
+      "type": "home",
+      "en": "Effort compounds when repeated without excuses.",
+      "bn": "অজুহাত ছাড়া পুনরাবৃত্ত প্রচেষ্টা বহুগুণ বাড়ে।"
+    },
+    {
+      "id": 25,
+      "type": "home",
+      "en": "Learning rewards those who return tomorrow.",
+      "bn": "যারা কালও ফিরে আসে, শেখা তাদের পুরস্কৃত করে।"
+    },
+    {
+      "id": 26,
+      "type": "home",
+      "en": "Stay curious; ordinary days become meaningful.",
+      "bn": "কৌতূহলী থাকো, সাধারণ দিনও অর্থপূর্ণ হয়ে ওঠে।"
+    },
+    {
+      "id": 27,
+      "type": "home",
+      "en": "Strong foundations are built in quiet moments.",
+      "bn": "নীরব সময়েই শক্ত ভিত্তি তৈরি হয়।"
+    },
+    {
+      "id": 28,
+      "type": "home",
+      "en": "One focused hour can change your week.",
+      "bn": "এক ঘণ্টার মনোযোগ পুরো সপ্তাহ বদলাতে পারে।"
+    },
+    {
+      "id": 29,
+      "type": "home",
+      "en": "Keep learning until confusion becomes clarity.",
+      "bn": "শিখতে থাকো, বিভ্রান্তি একদিন স্বচ্ছতায় বদলাবে।"
+    },
+    {
+      "id": 30,
+      "type": "home",
+      "en": "Be consistent enough to surprise yourself.",
+      "bn": "এত ধারাবাহিক হও যে নিজেই অবাক হও।"
+    },
+    {
+      "id": 31,
+      "type": "quiz_completion",
+      "en": "Every mistake brings you closer to mastery.",
+      "bn": "প্রতিটি ভুল তোমাকে দক্ষতার আরও কাছে নিয়ে যায়।"
+    },
+    {
+      "id": 32,
+      "type": "quiz_completion",
+      "en": "Today’s effort becomes tomorrow’s confidence.",
+      "bn": "আজকের প্রচেষ্টাই আগামীকালের আত্মবিশ্বাস হয়ে ওঠে।"
+    },
+    {
+      "id": 33,
+      "type": "quiz_completion",
+      "en": "You practiced today; that already counts.",
+      "bn": "আজ তুমি অনুশীলন করেছ—এটাই অগ্রগতি।"
+    },
+    {
+      "id": 34,
+      "type": "quiz_completion",
+      "en": "Small wins build strong English skills.",
+      "bn": "ছোট ছোট জয়ই ইংরেজির দক্ষতা শক্ত করে।"
+    },
+    {
+      "id": 35,
+      "type": "quiz_completion",
+      "en": "Keep practicing; fluency grows quietly.",
+      "bn": "অনুশীলন চালিয়ে যাও, সাবলীলতা নীরবে বাড়ে।"
+    },
+    {
+      "id": 36,
+      "type": "quiz_completion",
+      "en": "One quiz closer to better English.",
+      "bn": "আরও ভালো ইংরেজির পথে এক কুইজ এগিয়ে।"
+    },
+    {
+      "id": 37,
+      "type": "quiz_completion",
+      "en": "Your mistakes are teaching you something valuable.",
+      "bn": "তোমার ভুলগুলোই তোমাকে মূল্যবান কিছু শেখাচ্ছে।"
+    },
+    {
+      "id": 38,
+      "type": "quiz_completion",
+      "en": "Practice today, speak better tomorrow.",
+      "bn": "আজ অনুশীলন করো, কাল আরও ভালো বলো।"
+    },
+    {
+      "id": 39,
+      "type": "quiz_completion",
+      "en": "You improve every time you try.",
+      "bn": "প্রতিবার চেষ্টা করলেই তুমি আরও উন্নতি করো।"
+    },
+    {
+      "id": 40,
+      "type": "quiz_completion",
+      "en": "Progress matters more than a perfect score.",
+      "bn": "নিখুঁত স্কোরের চেয়ে অগ্রগতিই বেশি গুরুত্বপূর্ণ।"
+    },
+    {
+      "id": 41,
+      "type": "quiz_completion",
+      "en": "Another quiz done, another lesson learned.",
+      "bn": "আরেকটি কুইজ শেষ, আরেকটি শিক্ষা অর্জন।"
+    },
+    {
+      "id": 42,
+      "type": "quiz_completion",
+      "en": "Your English gets stronger with every attempt.",
+      "bn": "প্রতিটি চেষ্টায় তোমার ইংরেজি আরও শক্ত হয়।"
+    },
+    {
+      "id": 43,
+      "type": "quiz_completion",
+      "en": "Wrong answers can become lasting lessons.",
+      "bn": "ভুল উত্তরও স্থায়ী শিক্ষায় পরিণত হতে পারে।"
+    },
+    {
+      "id": 44,
+      "type": "quiz_completion",
+      "en": "Keep showing up; improvement will follow.",
+      "bn": "নিয়মিত ফিরে আসো, উন্নতি অবশ্যই আসবে।"
+    },
+    {
+      "id": 45,
+      "type": "quiz_completion",
+      "en": "Learning happens one question at a time.",
+      "bn": "একটি একটি প্রশ্ন করেই শেখা এগিয়ে যায়।"
+    },
+    {
+      "id": 46,
+      "type": "quiz_completion",
+      "en": "You finished what you started today.",
+      "bn": "আজ তুমি যা শুরু করেছিলে, তা শেষ করেছ।"
+    },
+    {
+      "id": 47,
+      "type": "quiz_completion",
+      "en": "Each answer strengthens what you know.",
+      "bn": "প্রতিটি উত্তর তোমার শেখাকে আরও শক্ত করে।"
+    },
+    {
+      "id": 48,
+      "type": "quiz_completion",
+      "en": "A better score begins with another try.",
+      "bn": "আরেকটি চেষ্টাই ভালো স্কোরের শুরু।"
+    },
+    {
+      "id": 49,
+      "type": "quiz_completion",
+      "en": "Your consistency is building real progress.",
+      "bn": "তোমার ধারাবাহিকতাই সত্যিকারের অগ্রগতি তৈরি করছে।"
+    },
+    {
+      "id": 50,
+      "type": "quiz_completion",
+      "en": "Review mistakes; turn them into strengths.",
+      "bn": "ভুলগুলো দেখো, সেগুলোকে শক্তিতে বদলে দাও।"
+    },
+    {
+      "id": 51,
+      "type": "quiz_completion",
+      "en": "You know more now than before.",
+      "bn": "আগের চেয়ে এখন তুমি আরও বেশি জানো।"
+    },
+    {
+      "id": 52,
+      "type": "quiz_completion",
+      "en": "Every completed quiz is meaningful progress.",
+      "bn": "প্রতিটি সম্পন্ন কুইজই অর্থপূর্ণ অগ্রগতি।"
+    },
+    {
+      "id": 53,
+      "type": "quiz_completion",
+      "en": "Keep learning until English feels natural.",
+      "bn": "ইংরেজি স্বাভাবিক লাগা পর্যন্ত শিখতে থাকো।"
+    },
+    {
+      "id": 54,
+      "type": "quiz_completion",
+      "en": "Good progress starts with honest practice.",
+      "bn": "সত্যিকারের অনুশীলন থেকেই ভালো অগ্রগতি শুরু হয়।"
+    },
+    {
+      "id": 55,
+      "type": "quiz_completion",
+      "en": "Your next attempt can be even better.",
+      "bn": "তোমার পরের চেষ্টাটি আরও ভালো হতে পারে।"
+    },
+    {
+      "id": 56,
+      "type": "quiz_completion",
+      "en": "Celebrate progress, then keep moving forward.",
+      "bn": "অগ্রগতি উদযাপন করো, তারপর সামনে এগিয়ে যাও।"
+    },
+    {
+      "id": 57,
+      "type": "quiz_completion",
+      "en": "Practice makes difficult English feel familiar.",
+      "bn": "অনুশীলন কঠিন ইংরেজিকেও পরিচিত করে তোলে।"
+    },
+    {
+      "id": 58,
+      "type": "quiz_completion",
+      "en": "Finished today, stronger for tomorrow.",
+      "bn": "আজ শেষ করেছ, কাল আরও শক্ত হবে।"
+    },
+    {
+      "id": 59,
+      "type": "quiz_completion",
+      "en": "Learn from errors, remember the lesson.",
+      "bn": "ভুল থেকে শেখো, শিক্ষাটা মনে রাখো।"
+    },
+    {
+      "id": 60,
+      "type": "quiz_completion",
+      "en": "Keep this momentum into your next quiz.",
+      "bn": "এই গতি তোমার পরের কুইজেও ধরে রাখো।"
+    }
+  ]
+}
