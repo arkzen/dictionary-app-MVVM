@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     alias(libs.plugins.hilt)
     alias(libs.plugins.navigation.safeargs)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -61,6 +62,11 @@ dependencies {
     // Navigation
     implementation libs.androidx.navigation.fragment.ktx
     implementation libs.androidx.navigation.ui.ktx
+    
+    // Room
+    implementation libs.room.runtime
+    implementation libs.room.ktx
+    ksp libs.room.compiler
     
     // Coroutines
     implementation libs.kotlinx.coroutines.android

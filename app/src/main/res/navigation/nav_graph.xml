@@ -62,6 +62,10 @@
         <action
             android:id="@+id/action_resultFragment_to_reviewFragment"
             app:destination="@id/reviewFragment" />
+        <action
+            android:id="@+id/action_resultFragment_to_quizFragment"
+            app:destination="@id/quizFragment"
+            app:popUpTo="@id/homeFragment" />
     </fragment>
 
     <fragment

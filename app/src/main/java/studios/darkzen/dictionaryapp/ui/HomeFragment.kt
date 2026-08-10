@@ -27,12 +27,15 @@ class HomeFragment : CoreBaseFragment<FragmentHomeBinding>() {
         binding.rvQuizPacks.layoutManager = LinearLayoutManager(requireContext())
         
         binding.btnStartTodayQuiz.setOnClickListener {
-            // Hardcoded for MVP: Start first pack of first category
             viewModel.categories.value.firstOrNull()?.packs?.firstOrNull()?.let { pack ->
-                val action = HomeFragmentDirections.actionHomeFragmentToQuizFragment(pack.id)
-                findNavController().navigate(action)
+                navigateToQuiz(pack.id)
             }
         }
+    }
+
+    private fun navigateToQuiz(packId: String) {
+        val action = HomeFragmentDirections.actionHomeFragmentToQuizFragment(packId)
+        findNavController().navigate(action)
     }
 
     override fun setupObserver() {
@@ -46,9 +49,16 @@ class HomeFragment : CoreBaseFragment<FragmentHomeBinding>() {
                         }
                         
                         val allPacks = categories.flatMap { it.packs }
-                        binding.rvQuizPacks.adapter = QuizPackAdapter(allPacks) { pack ->
-                            val action = HomeFragmentDirections.actionHomeFragmentToQuizFragment(pack.id)
-                            findNavController().navigate(action)
+                        val adapter = QuizPackAdapter(allPacks, viewModel.allProgress.value) { pack ->
+                            navigateToQuiz(pack.id)
+                        }
+                        binding.rvQuizPacks.adapter = adapter
+                        
+                        // Observe progress changes and update adapter
+                        launch {
+                            viewModel.allProgress.collectLatest { progressList ->
+                                adapter.updateData(allPacks, progressList)
+                            }
                         }
                     }
                 }

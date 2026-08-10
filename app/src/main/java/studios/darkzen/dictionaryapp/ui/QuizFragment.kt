@@ -10,11 +10,15 @@ import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
 import studios.darkzen.dictionaryapp.R
 import studios.darkzen.dictionaryapp.common.core.CoreBaseFragment
+import androidx.lifecycle.lifecycleScope
+import studios.darkzen.dictionaryapp.data.local.entity.QuizAnswerEntity
+import studios.darkzen.dictionaryapp.data.local.entity.QuizProgressEntity
 import studios.darkzen.dictionaryapp.data.model.Question
 import studios.darkzen.dictionaryapp.data.model.QuizPack
 import studios.darkzen.dictionaryapp.databinding.FragmentQuizBinding
 import studios.darkzen.dictionaryapp.databinding.ItemOptionBinding
 import studios.darkzen.dictionaryapp.viewmodel.QuizViewModel
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class QuizFragment : CoreBaseFragment<FragmentQuizBinding>() {
@@ -26,12 +30,28 @@ class QuizFragment : CoreBaseFragment<FragmentQuizBinding>() {
     private var currentQuestionIndex = 0
     private var selectedOptionIndex = -1
     private var score = 0
+    private var isResuming = false
 
     override fun getViewBinding() = FragmentQuizBinding.inflate(layoutInflater)
 
     override fun setupUI() {
         currentPack = viewModel.getPackById(args.packId)
-        showQuestion()
+        
+        viewLifecycleOwner.lifecycleScope.launch {
+            val progress = viewModel.getProgressById(args.packId)
+            if (progress != null) {
+                if (progress.isCompleted) {
+                    navigateToResult(progress.lastScore, currentPack?.questions?.size ?: 0)
+                    return@launch
+                } else {
+                    // Resume from next question
+                    currentQuestionIndex = progress.answeredCount
+                    score = progress.correctCount
+                    isResuming = true
+                }
+            }
+            showQuestion()
+        }
 
         binding.btnSubmit.setOnClickListener {
             if (selectedOptionIndex != -1) {
@@ -44,14 +64,38 @@ class QuizFragment : CoreBaseFragment<FragmentQuizBinding>() {
             if (currentQuestionIndex < (currentPack?.questions?.size ?: 0)) {
                 showQuestion()
             } else {
-                val action = QuizFragmentDirections.actionQuizFragmentToResultFragment(
-                    score,
-                    currentPack?.questions?.size ?: 0,
-                    args.packId
-                )
-                findNavController().navigate(action)
+                finishQuiz()
             }
         }
+    }
+
+    private fun finishQuiz() {
+        val total = currentPack?.questions?.size ?: 0
+        viewLifecycleOwner.lifecycleScope.launch {
+            val progress = viewModel.getProgressById(args.packId)
+            val bestScore = maxOf(score, progress?.bestScore ?: 0)
+            
+            viewModel.saveProgress(QuizProgressEntity(
+                packId = args.packId,
+                currentQuestionIndex = currentQuestionIndex,
+                answeredCount = total,
+                correctCount = score,
+                isCompleted = true,
+                lastScore = score,
+                bestScore = bestScore
+            ))
+            
+            navigateToResult(score, total)
+        }
+    }
+
+    private fun navigateToResult(score: Int, total: Int) {
+        val action = QuizFragmentDirections.actionQuizFragmentToResultFragment(
+            score,
+            total,
+            args.packId
+        )
+        findNavController().navigate(action)
     }
 
     private fun showQuestion() {
@@ -62,6 +106,13 @@ class QuizFragment : CoreBaseFragment<FragmentQuizBinding>() {
         binding.progressBar.max = currentPack?.questions?.size ?: 0
         binding.progressBar.progress = currentQuestionIndex + 1
         binding.tvQuestionText.text = question.questionText
+        
+        if (!question.hookText.isNullOrEmpty()) {
+            binding.tvHookText.text = question.hookText
+            binding.tvHookText.visibility = View.VISIBLE
+        } else {
+            binding.tvHookText.visibility = View.GONE
+        }
 
         binding.optionsContainer.removeAllViews()
         question.options.forEachIndexed { index, optionText ->
@@ -96,6 +147,22 @@ class QuizFragment : CoreBaseFragment<FragmentQuizBinding>() {
         val question = currentPack?.questions?.get(currentQuestionIndex) ?: return
         val isCorrect = selectedOptionIndex == question.correctAnswerIndex
         if (isCorrect) score++
+
+        // Save progress to Room
+        viewModel.saveAnswer(QuizAnswerEntity(
+            packId = args.packId,
+            questionId = question.id,
+            selectedAnswerIndex = selectedOptionIndex,
+            isCorrect = isCorrect
+        ))
+        
+        viewModel.saveProgress(QuizProgressEntity(
+            packId = args.packId,
+            currentQuestionIndex = currentQuestionIndex, // Current being answered
+            answeredCount = currentQuestionIndex + 1,
+            correctCount = score,
+            isCompleted = false
+        ))
 
         binding.btnSubmit.visibility = View.GONE
         binding.btnNext.visibility = View.VISIBLE

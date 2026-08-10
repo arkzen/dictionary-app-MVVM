@@ -4,9 +4,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import studios.darkzen.dictionaryapp.data.local.entity.QuizAnswerEntity
+import studios.darkzen.dictionaryapp.data.local.entity.QuizProgressEntity
 import studios.darkzen.dictionaryapp.data.model.QuizCategory
 import studios.darkzen.dictionaryapp.data.model.QuizPack
 import studios.darkzen.dictionaryapp.data.repository.QuizRepository
@@ -19,6 +23,9 @@ class QuizViewModel @Inject constructor(
 
     private val _categories = MutableStateFlow<List<QuizCategory>>(emptyList())
     val categories: StateFlow<List<QuizCategory>> = _categories.asStateFlow()
+
+    val allProgress: StateFlow<List<QuizProgressEntity>> = repository.getAllProgress()
+        .stateIn(viewModelScope, SharingStarted.Lazily, emptyList())
 
     init {
         loadCategories()
@@ -36,5 +43,23 @@ class QuizViewModel @Inject constructor(
 
     fun getPackById(packId: String): QuizPack? {
         return _categories.value.flatMap { it.packs }.find { it.id == packId }
+    }
+
+    suspend fun getProgressById(packId: String) = repository.getProgressById(packId)
+
+    fun saveProgress(progress: QuizProgressEntity) {
+        viewModelScope.launch {
+            repository.saveProgress(progress)
+        }
+    }
+
+    fun saveAnswer(answer: QuizAnswerEntity) {
+        viewModelScope.launch {
+            repository.saveAnswer(answer)
+        }
+    }
+
+    suspend fun resetPackProgress(packId: String, currentBestScore: Int) {
+        repository.resetPackProgress(packId, currentBestScore)
     }
 }

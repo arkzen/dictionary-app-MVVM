@@ -41,15 +41,31 @@
             android:padding="24dp">
 
             <TextView
+                android:id="@+id/tvHookText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/quiz_text_secondary"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Meeting-এ “discuss about” বলছেন? এই ছোট ভুলটা খুব common!"
+                tools:visibility="visible" />
+
+            <TextView
                 android:id="@+id/tvQuestionPrefix"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:text="Q."
                 android:textColor="@color/quiz_primary"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/tvHookText" />
 
             <TextView
                 android:id="@+id/tvQuestionText"

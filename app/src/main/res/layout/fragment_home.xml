@@ -4,132 +4,303 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/quiz_background">
+    android:background="@color/quiz_background"
+    android:clipToPadding="false"
+    android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:paddingStart="16dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="24dp">
 
-        <!-- Hero Banner -->
-        <androidx.cardview.widget.CardView
+
+        <!-- ===================================================== -->
+        <!-- 1. TOP HERO                                           -->
+        <!-- ===================================================== -->
+
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardHero"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
             app:cardElevation="0dp"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeWidth="0dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/quiz_accent_purple"
-                android:padding="20dp">
+                android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/tvHeroTitle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/lato_bold"
-                    android:text="@string/hero_title"
-                    android:textColor="@color/quiz_text_primary"
-                    android:textSize="24sp"
-                    app:layout_constraintEnd_toStartOf="@+id/ivHeroIllustration"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/tvHeroSubtitle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/hero_subtitle"
-                    android:textColor="@color/quiz_primary"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="@+id/tvHeroTitle"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvHeroTitle" />
-
-                <TextView
-                    android:id="@+id/tvHeroDesc"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/hero_description"
-                    android:textColor="@color/quiz_text_secondary"
-                    app:layout_constraintEnd_toEndOf="@+id/tvHeroTitle"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvHeroSubtitle" />
-
-                <ImageView
-                    android:id="@+id/ivHeroIllustration"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/larryillustration"
+                <!-- subtle decorative background -->
+                <View
+                    android:id="@+id/heroSoftShape"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.35"
+                    android:background="@drawable/bg_hero_soft_circle"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/btnStartTodayQuiz"
+
+                <!-- TITLE -->
+                <TextView
+                    android:id="@+id/tvHeroTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="22dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Practice English"
+                    android:textColor="@color/quiz_text_primary"
+                    android:textSize="26sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <!-- SUBTITLE -->
+                <TextView
+                    android:id="@+id/tvHeroSubtitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:lineSpacingExtra="1dp"
+                    android:text="with Bangla\nexplanations"
+                    android:textColor="@color/quiz_primary"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toStartOf="@id/heroGuide"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvHeroTitle" />
+
+
+                <!-- DESCRIPTION -->
+                <TextView
+                    android:id="@+id/tvHeroDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:lineSpacingExtra="2dp"
+                    android:text="Learn, Practice &amp; Improve\nEvery Day"
+                    android:textColor="@color/quiz_text_secondary"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@id/heroGuide"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvHeroSubtitle" />
+
+
+                <!-- WIZ BHAI -->
+                <ImageView
+                    android:id="@+id/heroGuide"
+                    android:layout_width="158dp"
+                    android:layout_height="205dp"
+                    android:layout_marginEnd="10dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@null"
+                    android:scaleType="fitEnd"
+                    android:src="@drawable/wiz_bhai_home"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvHeroTitle" />
+
+                <ImageView
+                    android:id="@+id/heroGuideBooks"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@null"
+                    android:scaleType="fitEnd"
+                    android:src="@drawable/top_hero_books"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- ===================================================== -->
+        <!-- 2. TODAY'S QUIZ CARD                                  -->
+        <!-- ===================================================== -->
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardTodayQuiz"
+            android:layout_width="0dp"
+            android:layout_height="168dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardHero"
+            app:strokeWidth="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <!-- Generated purple target background -->
+                <ImageView
+                    android:id="@+id/ivQuizBackground"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:contentDescription="@null"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg_hero_bottom"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <!-- TODAY'S QUIZ -->
+                <LinearLayout
+                    android:id="@+id/layoutTodayQuizLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    app:cardBackgroundColor="@color/quiz_primary"
-                    app:cardCornerRadius="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="18dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvHeroDesc">
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_calendar"
+                        app:tint="@color/white" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingStart="24dp"
-                        android:paddingTop="10dp"
-                        android:paddingEnd="24dp"
-                        android:paddingBottom="10dp"
-                        android:text="@string/start_quiz"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="TODAY'S QUIZ"
                         android:textColor="@color/white"
-                        android:textStyle="bold" />
-                </androidx.cardview.widget.CardView>
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+
+                <!-- QUIZ NAME -->
+                <TextView
+                    android:id="@+id/tvTodayQuizTitle"
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Common Mistakes"
+                    android:textColor="@color/white"
+                    android:textSize="23sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layoutTodayQuizLabel" />
+
+
+                <TextView
+                    android:id="@+id/tvTodayQuizSet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Set 1  •  10 Questions"
+                    android:textColor="#E6DEFF"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTodayQuizTitle" />
+
+
+                <!-- START QUIZ -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnStartTodayQuiz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:minWidth="0dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="16dp"
+                    android:text="Start Quiz"
+                    android:textAllCaps="false"
+                    android:textColor="@color/quiz_primary"
+                    android:textSize="14sp"
+                    app:backgroundTint="@color/white"
+                    app:cornerRadius="22dp"
+                    app:icon="@drawable/ic_arrow_right"
+                    app:iconGravity="textEnd"
+                    app:iconPadding="10dp"
+                    app:iconTint="@color/quiz_primary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
 
-        <!-- Categories Section -->
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- ===================================================== -->
+        <!-- 3. CATEGORIES                                         -->
+        <!-- ===================================================== -->
+
         <TextView
             android:id="@+id/tvCategoriesLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:fontFamily="@font/lato_bold"
             android:text="@string/categories"
             android:textColor="@color/quiz_text_primary"
             android:textSize="18sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardHero" />
+            app:layout_constraintTop_toBottomOf="@id/cardTodayQuiz" />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvCategories"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvCategoriesLabel"
             tools:listitem="@layout/item_category" />
 
-        <!-- More Quiz Packs Section -->
+
+        <!-- ===================================================== -->
+        <!-- 4. QUIZ PACKS                                         -->
+        <!-- ===================================================== -->
+
         <TextView
             android:id="@+id/tvMorePacksLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:fontFamily="@font/lato_bold"
             android:text="@string/more_quiz_packs"
             android:textColor="@color/quiz_text_primary"
             android:textSize="18sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/rvCategories" />
+
 
         <TextView
             android:id="@+id/tvViewAll"
@@ -137,19 +308,25 @@
             android:layout_height="wrap_content"
             android:text="@string/view_all"
             android:textColor="@color/quiz_primary"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@id/tvMorePacksLabel"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/tvMorePacksLabel" />
 
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvQuizPacks"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:nestedScrollingEnabled="false"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvMorePacksLabel"
             tools:listitem="@layout/item_quiz_pack" />
 
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>

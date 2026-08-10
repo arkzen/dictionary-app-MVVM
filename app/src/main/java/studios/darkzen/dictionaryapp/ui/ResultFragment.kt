@@ -1,14 +1,20 @@
 package studios.darkzen.dictionaryapp.ui
 
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
+import studios.darkzen.dictionaryapp.R
 import studios.darkzen.dictionaryapp.common.core.CoreBaseFragment
 import studios.darkzen.dictionaryapp.databinding.FragmentResultBinding
+import studios.darkzen.dictionaryapp.viewmodel.QuizViewModel
 
 @AndroidEntryPoint
 class ResultFragment : CoreBaseFragment<FragmentResultBinding>() {
 
+    private val viewModel: QuizViewModel by activityViewModels()
     private val args: ResultFragmentArgs by navArgs()
 
     override fun getViewBinding() = FragmentResultBinding.inflate(layoutInflater)
@@ -30,8 +36,11 @@ class ResultFragment : CoreBaseFragment<FragmentResultBinding>() {
         }
 
         binding.btnTryAgain.setOnClickListener {
-            val action = ResultFragmentDirections.actionResultFragmentToReviewFragment(args.packId) // Reusing navigation logic or popping back
-            findNavController().popBackStack() // Go back to Quiz
+            viewLifecycleOwner.lifecycleScope.launch {
+                viewModel.resetPackProgress(args.packId, score)
+                val action = ResultFragmentDirections.actionResultFragmentToQuizFragment(args.packId)
+                findNavController().navigate(action)
+            }
         }
     }
 }

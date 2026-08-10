@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">dictionaryapp</string>
+    <string name="app_name">WordSense</string>
     <string name="logo">Logo file</string>
     <string name="searchbar_hint">Enter any word</string>
     <string name="audio_play_button">audio play button</string>
