@@ -33,6 +33,9 @@
     <color name="welctxtcolor">#8c8c8c</color>
     <color name="searchtxtcolor">#212020</color>
 
+    <color name="nav_item_text">#333333</color>
+    <color name="nav_header_subtitle">#7E6BB3</color>
+
     <!-- Quiz App Colors -->
     <color name="quiz_primary">#6C63FF</color>
     <color name="quiz_primary_variant">#5A52E5</color>

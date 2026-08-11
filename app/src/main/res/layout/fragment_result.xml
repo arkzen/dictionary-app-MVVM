@@ -37,7 +37,7 @@
 
         <ImageView
             android:id="@+id/ivTrophy"
-            android:layout_width="120dp"
+            android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_marginTop="24dp"
             android:src="@drawable/ic_trophy"
@@ -200,6 +200,7 @@
                 android:fontFamily="@font/lato_bold"
                 android:lineSpacingExtra="4dp"
                 android:maxLines="2"
+                android:layout_marginTop="5dp"
                 android:textColor="#3D3270"
                 android:textSize="17sp"
                 app:layout_constraintBottom_toBottomOf="parent"

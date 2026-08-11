@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="176dp"
-    android:background="@color/quiz_primary"
+    android:layout_height="180dp"
+    android:background="@color/purple_200"
     android:gravity="bottom"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    android:orientation="vertical">
 
     <ImageView
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:src="@mipmap/ic_launcher_round" />
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:src="@drawable/logo_wordsense" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="8dp"
-        android:text="Wordsense"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:text="@string/app_name"
+        android:textColor="@color/nav_item_text"
+        android:textSize="20sp"
+        android:layout_marginStart="15dp"
         android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Daily English Quiz" />
+        android:text="@string/learn_practice_grow"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="30dp"/>
 
 </LinearLayout>

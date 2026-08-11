@@ -97,4 +97,16 @@
         android:label="Dictionary Search"
         tools:layout="@layout/fragment_dictionary_search" />
 
+    <fragment
+        android:id="@+id/privacyFragment"
+        android:name="studios.darkzen.dictionaryapp.ui.PrivacyFragment"
+        android:label="Privacy Policy"
+        tools:layout="@layout/fragment_privacy" />
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="studios.darkzen.dictionaryapp.ui.AboutFragment"
+        android:label="About"
+        tools:layout="@layout/fragment_about" />
+
 </navigation>

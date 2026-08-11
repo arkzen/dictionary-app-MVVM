@@ -50,4 +50,64 @@
     <string name="review_results">Review Results</string>
     <string name="continue_quiz">Continue Quiz</string>
     <string name="quiz_packs_count">%1$d Quiz Packs</string>
+    <string name="learn_practice_grow">Learn. Practice. Grow.</string>
+
+    <!-- Privacy Policy -->
+    <string name="privacy_policy_title">Privacy Policy</string>
+    <string name="privacy_last_updated">Last updated: August 11, 2026</string>
+    <string name="privacy_intro">Wordsense is an English-learning and dictionary application developed by Darkzen Studios. We respect your privacy and aim to keep the app simple, transparent, and privacy-friendly.\n\nThis Privacy Policy explains how Wordsense handles information when you use the application.</string>
+
+    <string name="privacy_section_1_title">1. Personal Information</string>
+    <string name="privacy_section_1_content">Wordsense does not require an account or registration.\n\nWe do not ask you to provide personal information such as your:\n• Name\n• Email address\n• Phone number\n• Profile information\n\nThe current version of Wordsense does not provide user accounts or cloud-based profiles.</string>
+
+    <string name="privacy_section_2_title">2. Quiz and Learning Data</string>
+    <string name="privacy_section_2_content">Wordsense may store learning-related information locally on your device, including:\n• Quiz progress\n• Completed quiz status\n• Quiz scores\n• Selected answers\n• Daily quiz information\n• App preferences\n• Other learning progress required for app functionality\n\nThis information is used only to provide features such as quiz progress, results, and continuing an unfinished quiz.\n\nThis information is stored locally on your device and is not uploaded to Darkzen Studios.</string>
+
+    <string name="privacy_section_3_title">3. Dictionary Search</string>
+    <string name="privacy_section_3_content">Wordsense includes a dictionary feature that allows you to search for English words and view information such as meanings, definitions, synonyms, pronunciation, and examples.\n\nWhen you perform a dictionary search, the requested word may be sent over the internet to a third-party public dictionary API so that the requested dictionary information can be returned.\n\nWordsense does not intentionally send your name, email address, quiz history, or other locally stored learning information with dictionary searches.\n\nThe third-party API provider may receive technical information normally associated with an internet request, such as an IP address or request metadata, according to that provider\'s own privacy practices.</string>
+
+    <string name="privacy_section_4_title">4. Local Storage</string>
+    <string name="privacy_section_4_content">Wordsense uses local device storage and a local database to provide application functionality.\n\nLocally stored information may include:\n• Quiz progress\n• Quiz results\n• Application preferences\n• Other information needed to maintain your learning experience\n\nThis information remains on your device unless a feature explicitly states otherwise.\n\nRemoving the app, clearing its application data, or using an available reset feature may permanently remove this locally stored information.</string>
+
+    <string name="privacy_section_5_title">5. Internet Access</string>
+    <string name="privacy_section_5_content">An internet connection may be required for certain features, including:\n• Dictionary searches that retrieve information from an online dictionary service\n• Checking whether a newer version of Wordsense is available\n• Opening external links where applicable\n\nThe core quiz content may be available locally depending on the version of the application.</string>
+
+    <string name="privacy_section_6_title">6. App Updates</string>
+    <string name="privacy_section_6_content">Wordsense may check whether a newer version of the application is available.\n\nSome updates may be marked as required when they contain important compatibility, security, content, or functionality changes. In such cases, users may be required to update Wordsense before continuing to use the application.\n\nIf Google Play\'s immediate in-app update flow is used, Google Play manages the update download, installation, and application restart. Google\'s documentation specifically describes immediate updates as flows intended for updates critical to core functionality where the user must update before continuing.</string>
+
+    <string name="privacy_section_7_title">7. Analytics and Advertising</string>
+    <string name="privacy_section_7_content">The current version of Wordsense does not use advertising SDKs or analytics services such as Google Analytics for Firebase.\n\nWe do not currently use the app to build advertising profiles or serve personalized advertisements.\n\nIf analytics or advertising services are introduced in a future version, this Privacy Policy will be updated before or alongside those changes.</string>
+
+    <string name="privacy_section_8_title">8. Permissions</string>
+    <string name="privacy_section_8_content">Wordsense only requests Android permissions required for its functionality.\n\nThe current application does not intentionally access sensitive information such as:\n• Contacts\n• Precise location\n• Call logs\n• SMS messages\n• Photos or videos\n• Microphone recordings\n\nIf new features require additional permissions in the future, they will only be requested when necessary and this Privacy Policy will be updated where appropriate.</string>
+
+    <string name="privacy_section_9_title">9. Data Sharing</string>
+    <string name="privacy_section_9_content">Darkzen Studios does not sell users\' personal information.\n\nLocally stored quiz and learning information is not intentionally shared with third parties.\n\nDictionary searches may involve communication with the external dictionary API described above.\n\nGoogle Play or Android may also process technical information independently when providing Play Store functionality such as application installation and updates. Such processing is governed by Google\'s own policies.</string>
+
+    <string name="privacy_section_10_title">10. Data Retention and Deletion</string>
+    <string name="privacy_section_10_content">Because the current version does not require an account, most learning information is stored locally on your device.\n\nYou can generally remove locally stored application information by:\n• Clearing Wordsense application data through Android settings, or\n• Uninstalling Wordsense.\n\nDarkzen Studios cannot normally recover locally stored learning information after it has been removed.\n\nData processed independently by an external dictionary API or Google Play may be subject to those providers\' own retention policies.</string>
+
+    <string name="privacy_section_11_title">11. Children\'s Privacy</string>
+    <string name="privacy_section_11_content">Wordsense is a general educational application and is not specifically designed to collect personal information from children.\n\nThe current version does not require registration or the submission of personal profile information.\n\nIf Wordsense is specifically targeted toward children in a future release, any additional requirements applicable to children\'s applications will be addressed before that release.</string>
+
+    <string name="privacy_section_12_title">12. Security</string>
+    <string name="privacy_section_12_content">We take reasonable measures to design Wordsense so that unnecessary personal information is not collected.\n\nNetwork requests should be transmitted using secure connections where supported by the service being accessed.\n\nHowever, no electronic storage or internet transmission method can be guaranteed to be completely secure.</string>
+
+    <string name="privacy_section_13_title">13. Changes to This Privacy Policy</string>
+    <string name="privacy_section_13_content">Wordsense may gain new features over time.\n\nIf a future update changes how information is accessed, collected, used, stored, or shared, this Privacy Policy will be updated accordingly.\n\nThe date shown at the top of this policy indicates when it was most recently revised.</string>
+
+    <string name="privacy_section_14_title">14. Contact Us</string>
+    <string name="privacy_section_14_content">If you have questions or concerns regarding Wordsense or this Privacy Policy, please contact:\n\nDarkzen Studios\nEmail: studiodarkzen@gmail.com</string>
+
+    <!-- About Page -->
+    <string name="about_title">About Wordsense</string>
+    <string name="about_motto">Learn English. Practice Daily.\nGrow with Confidence.</string>
+    <string name="about_description">Wordsense is a simple and practical English-learning app designed to make everyday learning easier and more enjoyable.\n\nPractice through short quizzes, improve your understanding with clear explanations, and learn from common English mistakes and real-life sentences — one small step at a time.</string>
+    <string name="about_goal_title">Our Goal</string>
+    <string name="about_goal_content">We believe learning English shouldn\'t feel complicated or boring.\n\nOur goal is to combine learning, quizzes, stories, and engaging content to help you build better English through consistent practice.\n\nWhether you have five minutes or twenty, every bit of practice counts. 💜</string>
+    <string name="about_contact_title">Contact Us</string>
+    <string name="about_contact_desc">Have feedback, suggestions, or found something we should improve?\nWe\'d love to hear from you.</string>
+    <string name="about_email">studiodarkzen@gmail.com</string>
+    <string name="about_footer">Wordsense\nLearn a little. Improve every day. 💜</string>
+    <string name="follow_us">Follow us on</string>
 </resources>

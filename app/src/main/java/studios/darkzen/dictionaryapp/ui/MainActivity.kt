@@ -23,12 +23,13 @@ class MainActivity : CoreBaseActivity<ActivityMainBinding>() {
         navController = navHostFragment.navController
 
         appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.homeFragment, R.id.dictionarySearchFragment),
+            setOf(R.id.homeFragment, R.id.dictionarySearchFragment, R.id.privacyFragment, R.id.aboutFragment),
             binding.drawerLayout
         )
 
         binding.toolbar.setupWithNavController(navController, appBarConfiguration)
         binding.navView.setupWithNavController(navController)
+        binding.navView.itemIconTintList = null
     }
 
     override fun setupObserver() {

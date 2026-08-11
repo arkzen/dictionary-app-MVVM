@@ -19,6 +19,7 @@
             android:background="@color/quiz_surface"
             app:layout_constraintTop_toTopOf="parent"
             app:navigationIcon="@drawable/ic_menu"
+            app:navigationIconTint="@color/quiz_text_primary"
             app:titleTextColor="@color/quiz_text_primary" />
 
         <fragment
@@ -40,6 +41,9 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
+        app:itemBackground="@android:color/transparent"
+        app:itemIconPadding="24dp"
+        app:itemTextColor="@color/nav_item_text"
         app:menu="@menu/drawer_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

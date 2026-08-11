@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/quiz_background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/tvPrivacyTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/privacy_policy_title"
+                    android:textColor="@color/quiz_primary"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tvLastUpdated"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/privacy_last_updated"
+                    android:textColor="@color/quiz_text_secondary"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="#EEEEEE" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_regular"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/privacy_intro"
+                    android:textColor="@color/quiz_text_primary"
+                    android:textSize="15sp" />
+
+                <!-- Section 1 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/privacy_section_1_title"
+                    android:textColor="@color/quiz_text_primary"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/privacy_section_1_content"
+                    android:textColor="@color/quiz_text_secondary"
+                    android:textSize="14sp" />
+
+                <!-- Section 2 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/privacy_section_2_title"
+                    android:textColor="@color/quiz_text_primary"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/privacy_section_2_content"
+                    android:textColor="@color/quiz_text_secondary"
+                    android:textSize="14sp" />
+
+                <!-- Section 3 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/privacy_section_3_title"
+                    android:textColor="@color/quiz_text_primary"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/privacy_section_3_content"
+                    android:textColor="@color/quiz_text_secondary"
+                    android:textSize="14sp" />
+
+                <!-- Section 4 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/privacy_section_4_title"
+                    android:textColor="@color/quiz_text_primary"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/privacy_section_4_content"
+                    android:textColor="@color/quiz_text_secondary"
+                    android:textSize="14sp" />
+
+                <!-- Section 5 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/privacy_section_5_title"
+                    android:textColor="@color/quiz_text_primary"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/privacy_section_5_content"
+                    android:textColor="@color/quiz_text_secondary"
+                    android:textSize="14sp" />
+
+                <!-- Section 6 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/privacy_section_6_title"
+                    android:textColor="@color/quiz_text_primary"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/privacy_section_6_content"
+                    android:textColor="@color/quiz_text_secondary"
+                    android:textSize="14sp" />
+
+                <!-- Section 7 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/privacy_section_7_title"
+                    android:textColor="@color/quiz_text_primary"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/privacy_section_7_content"
+                    android:textColor="@color/quiz_text_secondary"
+                    android:textSize="14sp" />
+
+                <!-- Section 8 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/privacy_section_8_title"
+                    android:textColor="@color/quiz_text_primary"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/privacy_section_8_content"
+                    android:textColor="@color/quiz_text_secondary"
+                    android:textSize="14sp" />
+
+                <!-- Section 9 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/privacy_section_9_title"
+                    android:textColor="@color/quiz_text_primary"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/privacy_section_9_content"
+                    android:textColor="@color/quiz_text_secondary"
+                    android:textSize="14sp" />
+
+                <!-- Section 10 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/privacy_section_10_title"
+                    android:textColor="@color/quiz_text_primary"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/privacy_section_10_content"
+                    android:textColor="@color/quiz_text_secondary"
+                    android:textSize="14sp" />
+
+                <!-- Section 11 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/privacy_section_11_title"
+                    android:textColor="@color/quiz_text_primary"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/privacy_section_11_content"
+                    android:textColor="@color/quiz_text_secondary"
+                    android:textSize="14sp" />
+
+                <!-- Section 12 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/privacy_section_12_title"
+                    android:textColor="@color/quiz_text_primary"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/privacy_section_12_content"
+                    android:textColor="@color/quiz_text_secondary"
+                    android:textSize="14sp" />
+
+                <!-- Section 13 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/privacy_section_13_title"
+                    android:textColor="@color/quiz_text_primary"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/privacy_section_13_content"
+                    android:textColor="@color/quiz_text_secondary"
+                    android:textSize="14sp" />
+
+                <!-- Section 14 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/privacy_section_14_title"
+                    android:textColor="@color/quiz_text_primary"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/privacy_section_14_content"
+                    android:textColor="@color/quiz_text_secondary"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
